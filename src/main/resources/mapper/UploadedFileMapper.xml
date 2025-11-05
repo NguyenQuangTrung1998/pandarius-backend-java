@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.files.UploadedFileMapper">
+    <insert id="insertFile" parameterType="com.example.demo.dto.fileDTO.UploadedFile" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO uploaded_files(file_name, file_type, file_data)
+        VALUES(#{fileName}, #{fileType}, #{fileData, jdbcType=BLOB})
+    </insert>
+
+    <select id="selectFileById" parameterType="long" resultType="com.example.demo.dto.fileDTO.UploadedFile">
+        SELECT id, file_name as fileName, file_type as fileType, file_data as fileData, uploaded_at as uploadedAt
+        FROM uploaded_files
+        WHERE id = #{id}
+    </select>
+</mapper>
