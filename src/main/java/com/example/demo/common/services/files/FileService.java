@@ -1,7 +1,7 @@
-package com.example.demo.services.files.uploadFile;
+package com.example.demo.common.services.files;
 
-import com.example.demo.dto.fileDTO.UploadedFile;
-import com.example.demo.mapper.files.UploadedFileMapper;
+import com.example.demo.common.dto.fileDTO.UploadedFile;
+import com.example.demo.common.mapper.files.UploadedFileMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

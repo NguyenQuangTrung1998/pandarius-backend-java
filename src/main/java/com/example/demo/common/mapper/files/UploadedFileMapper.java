@@ -1,6 +1,6 @@
-package com.example.demo.mapper.files;
+package com.example.demo.common.mapper.files;
 
-import com.example.demo.dto.fileDTO.UploadedFile;
+import com.example.demo.common.dto.fileDTO.UploadedFile;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

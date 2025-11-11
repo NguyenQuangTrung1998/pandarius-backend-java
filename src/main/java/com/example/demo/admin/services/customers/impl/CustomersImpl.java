@@ -1,8 +1,8 @@
-package com.example.demo.services.customers.impl;
+package com.example.demo.admin.services.customers.impl;
 
-import com.example.demo.dto.customerDTO.CustomerDTO;
-import com.example.demo.mapper.customers.CustomerMapper;
-import com.example.demo.services.customers.CustomersService;
+import com.example.demo.admin.dto.customerDTO.CustomerDTO;
+import com.example.demo.admin.mapper.customers.CustomerMapper;
+import com.example.demo.admin.services.customers.CustomersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

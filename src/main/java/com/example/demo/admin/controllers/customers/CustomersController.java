@@ -1,6 +1,6 @@
-package com.example.demo.controller.customers;
-import com.example.demo.dto.customerDTO.CustomerDTO;
-import com.example.demo.services.customers.impl.CustomersImpl;
+package com.example.demo.admin.controllers.customers;
+import com.example.demo.admin.dto.customerDTO.CustomerDTO;
+import com.example.demo.admin.services.customers.impl.CustomersImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

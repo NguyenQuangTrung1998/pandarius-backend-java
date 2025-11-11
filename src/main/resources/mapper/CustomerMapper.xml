@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    <mapper namespace="com.example.demo.mapper.customers.CustomerMapper">
-        <resultMap id="customerMapping" type="com.example.demo.dto.customerDTO.CustomerDTO">
+    <mapper namespace="com.example.demo.admin.mapper.customers.CustomerMapper">
+        <resultMap id="customerMapping" type="com.example.demo.admin.dto.customerDTO.CustomerDTO">
             <id property="cus_id" column="cus_id"/>
             <result property="cus_name" column="cus_name"/>
             <result property="cus_address" column="cus_address"/>

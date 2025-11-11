@@ -1,4 +1,4 @@
-package com.example.demo.dto.customerDTO;
+package com.example.demo.admin.dto.customerDTO;
 
 import java.util.List;
 

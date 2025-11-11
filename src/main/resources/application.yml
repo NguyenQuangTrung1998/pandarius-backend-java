@@ -10,6 +10,7 @@ spring:
     password: root
     driver-class-name: org.postgresql.Driver
 
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.demo.dto
@@ -19,7 +20,7 @@ mybatis:
 servlet:
   multipart:
     enabled: true
-    max-file-size: 20MB        # gi?i h?n kích th??c file upload
+    max-file-size: 20MB        # gi?i h?n kï¿½ch th??c file upload
     max-request-size: 20MB     # gi?i h?n request bao g?m file
     file-size-threshold: 2KB
 

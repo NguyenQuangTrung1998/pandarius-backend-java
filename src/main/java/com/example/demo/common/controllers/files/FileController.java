@@ -1,8 +1,8 @@
-package com.example.demo.controller.files;
+package com.example.demo.common.controllers.files;
 
-import com.example.demo.dto.fileDTO.UploadResponse;
-import com.example.demo.dto.fileDTO.UploadedFile;
-import com.example.demo.services.files.uploadFile.FileService;
+import com.example.demo.common.dto.fileDTO.UploadResponse;
+import com.example.demo.common.dto.fileDTO.UploadedFile;
+import com.example.demo.common.services.files.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
