@@ -1,6 +1,7 @@
 package com.example.demo.admin.dto.productDTO;
 
 import com.example.common.paging.PagedRequest;
+import com.example.common.paging.PagedResult;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,13 +11,13 @@ import java.util.List;
 public class ProductDTO {
     @Getter
     @Setter
-   public class Req extends PagedRequest {
+   public static class Req extends PagedRequest {
       private String code;
       private String productName;
     }
     @Getter
     @Setter
-  public class Res {
+  public static class Res extends PagedResult {
        private Long id;
        private String code;
        private List<String> images;
