@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    url: "jdbc:postgresql://localhost:5432/data_analystic"
+    url: "jdbc:postgresql://localhost:5432/pandarius_database"
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
