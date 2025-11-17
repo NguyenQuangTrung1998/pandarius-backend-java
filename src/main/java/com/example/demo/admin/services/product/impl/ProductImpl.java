@@ -5,7 +5,6 @@ import com.example.demo.admin.dto.productDTO.ProductDTO;
 import com.example.demo.admin.mapper.product.ProductMapper;
 import com.example.demo.admin.services.product.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
