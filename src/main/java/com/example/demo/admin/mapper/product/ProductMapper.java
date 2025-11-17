@@ -8,6 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface ProductMapper {
-List<ProductDTO> getProducts();
+List<ProductDTO.Res> getProducts(ProductDTO.Req req);
 ProductDTO getProduct(@Param("id") Long id);
 }
