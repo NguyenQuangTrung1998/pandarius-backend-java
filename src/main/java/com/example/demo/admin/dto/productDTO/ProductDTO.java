@@ -12,20 +12,20 @@ public class ProductDTO {
     private Long id;
     private String code;
     private List<String> images;
-    private String product_name;
+    private String productName;
     private Float price;
-    private List<String> size;
-    private String product_type;
+    private List<String> sizes;
+    private String productType;
     private String description;
     private Integer quantity;
     private String status;
     private String color;
     private String gender;
-    private OffsetDateTime creation_time;
-    private String discount_percent;
-    private float discount_price;
-    private String thumbnail_image;
-    private String thumbnail_video;
-    private String guide_image;
+    private OffsetDateTime creationTime;
+    private String discountPercent;
+    private float discountPrice;
+    private String thumbnailImage;
+    private String thumbnailVideo;
+    private String guideImage;
 
 }
