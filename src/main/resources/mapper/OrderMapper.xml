@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.admin.mapper.orders.OrderMapper">
+    <resultMap id="orderMapper" type="com.example.demo.admin.dto.orderDTO.OrderDTO$Res">
+        <id property="id" column="id"/>
+        <result property="creationTime" column="creation_time" />
+        <result property="address" column="address" />
+        <result property="note" column="note" />
+        <result property="name" column="name" />
+        <result property="phoneNumber" column="phone_number" />
+        <result property="email" column="email" />
+        <result property="shippingFee" column="shipping_fee" />
+        <result property="sumTotal" column="sum_total" />
+        <result property="status" column="status" />
+    </resultMap>
+    <select id="getOrders" resultMap="orderMapper">
+        select * from orders
+        <where>
+            <if test="name != null and name !=''">
+                AND name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="phoneNumber != null and phoneNumber !=''">
+                AND phone_number LIKE CONCAT('%', #{phoneNumber}, '%')
+            </if>
+            <if test="email != null and email!=''">
+                AND email LIKE CONCAT('%', #{email},'%')
+            </if>
+        </where>
+    </select>
+    <select id="countOrders" resultType="long" parameterType="com.example.demo.admin.dto.orderDTO.OrderDTO$Req">
+        SELECT COUNT(*)
+        FROM orders
+        <where>
+            <if test="name != null and name !=''">
+                AND name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="phoneNumber != null and phoneNumber !=''">
+                AND phone_number LIKE CONCAT('%', #{phoneNumber}, '%')
+            </if>
+            <if test="email != null and email!=''">
+                AND email LIKE CONCAT('%', #{email},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

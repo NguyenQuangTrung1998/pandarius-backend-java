@@ -1,12 +1,10 @@
 package com.example.demo.admin.services.product.impl;
-
 import com.example.common.paging.PagedResult;
 import com.example.demo.admin.dto.productDTO.ProductDTO;
 import com.example.demo.admin.mapper.product.ProductMapper;
 import com.example.demo.admin.services.product.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
