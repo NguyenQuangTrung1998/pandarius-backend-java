@@ -55,4 +55,7 @@
             </if>
         </where>
     </select>
+    <select id="getProduct" resultMap="productMapping" >
+        select * from product where id = #{id}
+    </select>
 </mapper>
