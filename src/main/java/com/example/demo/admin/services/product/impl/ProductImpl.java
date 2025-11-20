@@ -27,7 +27,11 @@ public class ProductImpl implements ProductService {
         result.setTotalCount(totalCount);
 
         return result;
-
     }
+    @Override
+    public ProductDTO.Res getProduct(Long id){
+        return productMapper.getProduct(id);
+    }
+
 
 }

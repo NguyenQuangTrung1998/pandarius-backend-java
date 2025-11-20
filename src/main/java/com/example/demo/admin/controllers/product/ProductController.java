@@ -16,5 +16,12 @@ public class ProductController {
     public PagedResult<ProductDTO.Res> getProducts(@ModelAttribute ProductDTO.Req req){
       return productService.getProducts(req);
     }
+    @GetMapping("/{id}")
+    public ProductDTO.Res getProduct(@PathVariable("id") Long id){
+        if (id == null){
+            return null;
+        }
+        return productService.getProduct(id);
+    }
 
 }

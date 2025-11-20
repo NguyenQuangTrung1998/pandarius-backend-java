@@ -58,4 +58,23 @@
     <select id="getProduct" resultMap="productMapping" >
         select * from product where id = #{id}
     </select>
+    <update id="updateProduct">
+        update product SET
+            images=#{body.images}
+            product_name = #{body.productName}
+            price = #{body.price}
+            size = #{body.sizes}
+            product_type = #{body.productType}
+            description = #{body.description}
+            quantity = #{body.quantity}
+            status = #{body.status}
+            color = #{body.color}
+            gender = #{body.gender}
+            discount_percent = #{body.discountPercent}
+            discount_price = #{body.discountPrice}
+            thumbnail_image = #{body.thumbnailImage}
+            thumbnail_video = #{body.thumbnailVideo}
+            guide_image = #{body.guideImage}
+        where id = #{id}
+    </update>
 </mapper>
