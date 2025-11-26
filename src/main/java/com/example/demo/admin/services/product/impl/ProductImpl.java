@@ -12,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductImpl implements ProductService {
     private final ProductMapper productMapper;
-
     @Override
     public PagedResult<ProductDTO.Res> getProducts(ProductDTO.Req req) {
         // Lấy danh sách sản phẩm theo điều kiện + limit/offset
@@ -32,6 +31,9 @@ public class ProductImpl implements ProductService {
     public ProductDTO.Res getProduct(Long id){
         return productMapper.getProduct(id);
     }
-
+    @Override
+    public String updateProduct(Long id, ProductDTO.Body body){
+        return "Updated!";
+    }
 
 }
