@@ -2,21 +2,11 @@
 package com.example.common.paging;
 
 public final class PagingUtils {
-
-    // Giới hạn an toàn max 100
     private static final int MAX_LIMIT = 100;
 
     private PagingUtils() {
     }
 
-    /**
-     * Chuẩn hóa tham số phân trang.
-     * - Nếu maxResultCount null hoặc < 0 -> 0
-     * - Nếu maxResultCount > MAX_LIMIT -> = MAX_LIMIT
-     * - Nếu skipCount null hoặc < 0 -> 0
-     *
-     * Lưu ý: maxResultCount = 0 nghĩa là "trả hết" (không limit).
-     */
     public static void normalize(PagedRequest request) {
         if (request == null) {
             return;
@@ -43,21 +33,12 @@ public final class PagingUtils {
         request.setMaxResultCount(max);
         request.setSkipCount(skip);
     }
-
-    /**
-     * Tính offset cho SQL (LIMIT ? OFFSET ?, hoặc dùng trong MyBatis/Pagination plugin).
-     */
     public static int getOffset(PagedRequest request) {
         if (request == null || request.getSkipCount() == null) {
             return 0;
         }
         return Math.max(0, request.getSkipCount());
     }
-
-    /**
-     * Tính limit cho SQL.
-     * Nếu maxResultCount = 0 => coi như không limit (tùy DB mà xử lý).
-     */
     public static int getLimit(PagedRequest request) {
         if (request == null || request.getMaxResultCount() == null) {
             return 0;
