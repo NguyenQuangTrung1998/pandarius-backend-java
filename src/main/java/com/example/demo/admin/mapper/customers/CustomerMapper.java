@@ -7,5 +7,6 @@ import java.util.List;
 
 @Mapper
 public interface CustomerMapper {
-    List<CustomerDTO> findAll();
+    List<CustomerDTO.Res> getCustomers(CustomerDTO.Req req);
+    Long countCustomers(CustomerDTO.Req req);
 }

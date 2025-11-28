@@ -1,11 +1,9 @@
 package com.example.demo.admin.controllers.customers;
+import com.example.common.paging.PagedResult;
 import com.example.demo.admin.dto.customerDTO.CustomerDTO;
 import com.example.demo.admin.services.customers.impl.CustomersImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/customers")
@@ -13,7 +11,7 @@ import java.util.List;
 public class CustomersController {
     private final CustomersImpl customers;
     @GetMapping
-    public List<CustomerDTO> getCustomers() {
-        return customers.getCustomers();
+    public PagedResult<CustomerDTO.Res> getCustomers(@ModelAttribute CustomerDTO.Req req) {
+        return customers.getCustomers(req);
     }
 }
