@@ -2,6 +2,7 @@ package com.example.demo.admin.mapper.customers;
 
 import com.example.demo.admin.dto.customerDTO.CustomerDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -9,4 +10,6 @@ import java.util.List;
 public interface CustomerMapper {
     List<CustomerDTO.Res> getCustomers(CustomerDTO.Req req);
     Long countCustomers(CustomerDTO.Req req);
+    void addCustomer(CustomerDTO.Body body);
+    void deleteCustomer(@Param("id") String id);
 }

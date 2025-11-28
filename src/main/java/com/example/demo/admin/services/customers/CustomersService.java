@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CustomersService {
     PagedResult<CustomerDTO.Res> getCustomers(CustomerDTO.Req req);
+    void addCustomer(CustomerDTO.Body body);
+    void deleteCustomer(String id);
 }

@@ -22,6 +22,7 @@ public class CustomerDTO {
         private OffsetDateTime created_at;
     }
     @Getter
+
     public static class Res extends Body{
         private String id;
         private OffsetDateTime created_at;

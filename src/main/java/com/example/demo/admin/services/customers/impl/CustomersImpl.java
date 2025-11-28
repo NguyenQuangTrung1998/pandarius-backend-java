@@ -22,4 +22,14 @@ public class CustomersImpl implements CustomersService {
         result.setTotalCount(totalCount);
         return result;
     }
+
+    @Override
+    public void addCustomer(CustomerDTO.Body body) {
+      customerMapper.addCustomer(body);
+    }
+
+    @Override
+    public void deleteCustomer(String id) {
+        customerMapper.deleteCustomer(id);
+    }
 }

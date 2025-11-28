@@ -14,4 +14,12 @@ public class CustomersController {
     public PagedResult<CustomerDTO.Res> getCustomers(@ModelAttribute CustomerDTO.Req req) {
         return customers.getCustomers(req);
     }
+    @PostMapping
+    public void addCustomer(@RequestBody CustomerDTO.Body body){
+        customers.addCustomer(body);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable String id){
+        customers.deleteCustomer(id);
+    }
 }

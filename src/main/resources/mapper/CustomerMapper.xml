@@ -44,4 +44,11 @@
             </if>
         </where>
     </select>
+
+    <insert id="addCustomer" parameterType="com.example.demo.admin.dto.customerDTO.CustomerDTO$Body">
+        INSERT INTO customers(name,email,phonenumber,address) VALUES(#{name}, #{email}, #{phoneNumber}, #{address})
+    </insert>
+    <delete id="deleteCustomer" parameterType="String">
+        DELETE FROM customers where id=#{id}::uuid
+    </delete>
     </mapper>
