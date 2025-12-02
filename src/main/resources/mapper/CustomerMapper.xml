@@ -45,6 +45,10 @@
         </where>
     </select>
 
+    <select id="findCustomerById" resultType="com.example.demo.admin.dto.customerDTO.CustomerDTO$Res">
+        select * from customers where id=#{id}::uuid
+    </select>
+
     <insert id="addCustomer" parameterType="com.example.demo.admin.dto.customerDTO.CustomerDTO$Body">
         INSERT INTO customers(name,email,phonenumber,address) VALUES(#{name}, #{email}, #{phoneNumber}, #{address})
     </insert>

@@ -3,6 +3,7 @@ import com.example.common.paging.PagedResult;
 import com.example.demo.admin.dto.customerDTO.CustomerDTO;
 import com.example.demo.admin.mapper.customers.CustomerMapper;
 import com.example.demo.admin.services.customers.CustomersService;
+import com.example.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -32,4 +33,19 @@ public class CustomersImpl implements CustomersService {
     public void deleteCustomer(String id) {
         customerMapper.deleteCustomer(id);
     }
+
+    @Override
+    public CustomerDTO.Res findCustomerById(String id) {
+        if(id == null || id.isEmpty()){
+            throw new IllegalArgumentException("Thông tin không hợp lệ, vui lòng kiểm tra lại!");
+        }else {
+            CustomerDTO.Res customer = customerMapper.findCustomerById(id);
+            if(customer==null){
+                throw new ResourceNotFoundException("Không tìm thấy khách hàng với id = " + id);
+            }
+            return customer;
+        }
+
+    }
+
 }

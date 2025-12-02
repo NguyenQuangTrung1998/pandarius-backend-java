@@ -12,4 +12,5 @@ public interface CustomerMapper {
     Long countCustomers(CustomerDTO.Req req);
     void addCustomer(CustomerDTO.Body body);
     void deleteCustomer(@Param("id") String id);
+    CustomerDTO.Res findCustomerById(@Param("id") String id );
 }

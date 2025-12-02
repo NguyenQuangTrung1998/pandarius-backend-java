@@ -22,4 +22,8 @@ public class CustomersController {
     public void deleteCustomer(@PathVariable String id){
         customers.deleteCustomer(id);
     }
+    @GetMapping("/{id}")
+    public CustomerDTO.Res findCustomerById(@PathVariable String id){
+        return customers.findCustomerById(id);
+    }
 }
