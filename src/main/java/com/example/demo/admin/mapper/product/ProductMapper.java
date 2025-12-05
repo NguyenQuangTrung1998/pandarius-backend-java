@@ -9,7 +9,7 @@ public interface ProductMapper {
     List<ProductDTO.Res> getProducts(ProductDTO.Req req);
     Long countProducts(ProductDTO.Req req);
     ProductDTO.Res getProduct(@Param("id") Long id);
-    void updateProduct(@Param("id") Long id , @Param("body") ProductDTO.Body body);
+    void updateProduct(ProductDTO.Body body);
     void deleteProduct(@Param("id") Long id);
 
 }

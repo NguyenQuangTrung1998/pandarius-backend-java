@@ -28,5 +28,12 @@ public class ProductController {
         productService.deleteProduct(id);
     }
 
+    @PutMapping
+    public void updateProduct(@RequestBody ProductDTO.Body body){
+        System.out.println("this is body to update: " + body.getProductName() +"\t"+ body.getId());
+        productService.updateProduct(body);
+    }
+
+
 
 }

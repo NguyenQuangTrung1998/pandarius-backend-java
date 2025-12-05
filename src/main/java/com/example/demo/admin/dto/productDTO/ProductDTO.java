@@ -2,6 +2,8 @@ package com.example.demo.admin.dto.productDTO;
 
 import com.example.common.paging.PagedRequest;
 import com.example.common.paging.PagedResult;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +21,7 @@ public class ProductDTO {
     @Getter
     @Setter
     public static class Body {
+        private Long id;
         private List<String> images;
         private String productName;
         private Float price;
@@ -34,6 +37,7 @@ public class ProductDTO {
         private String thumbnailImage;
         private String thumbnailVideo;
         private String guideImage;
+
     }
     @Getter
     @Setter

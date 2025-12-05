@@ -58,23 +58,23 @@
     <select id="getProduct" resultMap="productMapping" >
         select * from product where id = #{id}
     </select>
-    <update id="updateProduct">
+    <update id="updateProduct" parameterType="com.example.demo.admin.dto.productDTO.ProductDTO$Body">
         update product SET
-            images=#{body.images}
-            product_name = #{body.productName}
-            price = #{body.price}
-            size = #{body.sizes}
-            product_type = #{body.productType}
-            description = #{body.description}
-            quantity = #{body.quantity}
-            status = #{body.status}
-            color = #{body.color}
-            gender = #{body.gender}
-            discount_percent = #{body.discountPercent}
-            discount_price = #{body.discountPrice}
-            thumbnail_image = #{body.thumbnailImage}
-            thumbnail_video = #{body.thumbnailVideo}
-            guide_image = #{body.guideImage}
+<!--            images=#{imagesJson}-->
+            product_name = #{productName},
+            price = #{price},
+<!--            size = #{sizesJson}-->
+            product_type = #{productType},
+            description = #{description},
+            quantity = #{quantity},
+            status = #{status},
+            color = #{color},
+            gender = #{gender},
+            discount_percent = #{discountPercent},
+            discount_price = #{discountPrice},
+            thumbnail_image = #{thumbnailImage},
+            thumbnail_video = #{thumbnailVideo},
+            guide_image = #{guideImage}
         where id = #{id}
     </update>
     <delete id="deleteProduct" parameterType="Long">

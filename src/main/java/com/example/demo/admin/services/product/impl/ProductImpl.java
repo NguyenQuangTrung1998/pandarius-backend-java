@@ -5,6 +5,8 @@ import com.example.demo.admin.mapper.product.ProductMapper;
 import com.example.demo.admin.services.product.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 
@@ -32,8 +34,9 @@ public class ProductImpl implements ProductService {
         return productMapper.getProduct(id);
     }
     @Override
-    public String updateProduct(Long id, ProductDTO.Body body){
-        return "Updated!";
+    @Transactional
+    public void updateProduct(ProductDTO.Body body){
+        productMapper.updateProduct(body);
     }
 
     @Override
