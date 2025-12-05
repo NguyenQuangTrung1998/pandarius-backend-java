@@ -38,17 +38,27 @@
 
     <!-- Column header — tên các cột -->
     <columnHeader>
-        <band height="20">
+        <band height="25">
+
             <staticText>
                 <reportElement x="60"  y="0" width="200" height="20"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[Name]]></text>
             </staticText>
             <staticText>
                 <reportElement x="270" y="0" width="200" height="20"/>
+               <textElement>
+                   <font isBold="true"/>
+               </textElement>
                 <text><![CDATA[Email]]></text>
             </staticText>
             <staticText>
                 <reportElement x="480" y="0" width="75"  height="20"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[Phone Number]]></text>
             </staticText>
         </band>
