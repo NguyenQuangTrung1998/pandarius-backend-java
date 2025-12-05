@@ -77,4 +77,7 @@
             guide_image = #{body.guideImage}
         where id = #{id}
     </update>
+    <delete id="deleteProduct" parameterType="Long">
+        DELETE FROM product where id = #{id}
+    </delete>
 </mapper>

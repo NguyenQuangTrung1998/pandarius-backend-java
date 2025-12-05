@@ -13,4 +13,6 @@ public interface CustomerMapper {
     void addCustomer(CustomerDTO.Body body);
     void deleteCustomer(@Param("id") String id);
     CustomerDTO.Res findCustomerById(@Param("id") String id );
+    List<CustomerDTO.Res> findAll();
+
 }

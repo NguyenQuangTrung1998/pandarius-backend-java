@@ -36,4 +36,12 @@ public class ProductImpl implements ProductService {
         return "Updated!";
     }
 
+    @Override
+    public void deleteProduct(Long id) {
+        System.out.println("delete product by id: " + id);
+        if (id == null){
+            throw new RuntimeException("bad request!");
+        }
+        productMapper.deleteProduct(id);
+    }
 }

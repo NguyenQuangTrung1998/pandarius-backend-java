@@ -55,4 +55,12 @@
     <delete id="deleteCustomer" parameterType="String">
         DELETE FROM customers where id=#{id}::uuid
     </delete>
+    <select id="findAll" resultMap="customerMapping">
+        SELECT * FROM customers
+        <where>
+            <if test="name!=null and name!=''">
+                and name = #{name}
+            </if>
+        </where>
+    </select>
     </mapper>
