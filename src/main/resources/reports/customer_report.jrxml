@@ -41,8 +41,8 @@
         <band height="25">
 
             <staticText>
-                <reportElement x="60"  y="0" width="200" height="20"/>
-                <textElement>
+                <reportElement x="60"  y="0" width="200" height="20" />
+                <textElement >
                     <font isBold="true"/>
                 </textElement>
                 <text><![CDATA[Name]]></text>
@@ -68,7 +68,7 @@
     <detail>
         <band height="20">
             <textField>
-                <reportElement x="60" y="0" width="200" height="20"/>
+                <reportElement x="60" y="0" width="200" height="20" />
                 <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
             </textField>
             <textField>

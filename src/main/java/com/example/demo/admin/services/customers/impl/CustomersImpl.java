@@ -88,6 +88,6 @@ public class CustomersImpl implements CustomersService {
         // 5. Fill báo cáo
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, dataSource);
         return jasperPrint;
-
     }
 }
+
