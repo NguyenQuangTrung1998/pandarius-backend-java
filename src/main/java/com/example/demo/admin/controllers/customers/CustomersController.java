@@ -10,8 +10,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
 @RequestMapping(value = "/customers")
+@RestController
 @RequiredArgsConstructor
 public class CustomersController {
     private final CustomersImpl customers;

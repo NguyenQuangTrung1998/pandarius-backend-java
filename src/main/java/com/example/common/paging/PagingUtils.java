@@ -12,6 +12,7 @@ public final class PagingUtils {
             return;
         }
 
+
         Integer rawMax = request.getMaxResultCount();
         Integer rawSkip = request.getSkipCount();
 

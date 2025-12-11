@@ -60,10 +60,7 @@
     </select>
     <update id="updateProduct" parameterType="com.example.demo.admin.dto.productDTO.ProductDTO$Body">
         update product SET
-<!--            images=#{imagesJson}-->
             product_name = #{productName},
-            price = #{price},
-<!--            size = #{sizesJson}-->
             product_type = #{productType},
             description = #{description},
             quantity = #{quantity},

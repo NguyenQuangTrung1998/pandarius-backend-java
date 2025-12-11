@@ -2,8 +2,6 @@ package com.example.demo.admin.dto.productDTO;
 
 import com.example.common.paging.PagedRequest;
 import com.example.common.paging.PagedResult;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
 

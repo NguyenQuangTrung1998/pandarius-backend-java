@@ -24,4 +24,8 @@ servlet:
     max-request-size: 20MB
     file-size-threshold: 2KB
 
+app:
+  file:
+    upload-dir: C:/data/uploads
+
 

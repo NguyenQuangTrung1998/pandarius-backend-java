@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import java.time.OffsetDateTime;
 
-public class CustomerDTO {
+    public class CustomerDTO {
     @Getter
     @Setter
     public static class Body{
