@@ -56,7 +56,7 @@ public class FileUploadController {
             fileInfo.setUrl(fileUrl);
             fileInfoMapper.insertFileInfo(fileInfo);
 
-            return ResponseEntity.ok("Upload thành công! URL: " + fileUrl);
+            return ResponseEntity.ok(fileInfo);
 
         } catch (IOException e) {
             e.printStackTrace();
