@@ -33,27 +33,43 @@ public class FileUploadController {
     @PostMapping("/upload-file")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            // Tên file gốc
-            String originalFilename = file.getOriginalFilename();
-            // Tạo đường dẫn file mới (có thể thêm UUID để tránh trùng tên)
-            String fileName = System.currentTimeMillis() + "_" + originalFilename;
+            if (file.isEmpty()) {
+                return ResponseEntity.badRequest().body("File is empty.");
+            }
 
-            // Tạo folder nếu chưa tồn tại
+            String originalFilename = file.getOriginalFilename();
+
+            // Lấy base name (bỏ extension)
+            String baseName = originalFilename;
+            if (originalFilename != null && originalFilename.contains(".")) {
+                baseName = originalFilename.substring(0, originalFilename.lastIndexOf("."));
+            }
+
+            // Lấy extension
+            String extension = "";
+            if (originalFilename != null && originalFilename.contains(".")) {
+                extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+            }
+
+            // Tạo tên file unique: tên gốc không extension + UUID + extension
+            String uniqueName = baseName + "_" + java.util.UUID.randomUUID().toString() + extension;
+
+            // Tạo thư mục nếu chưa tồn tại
             Path uploadPath = Paths.get(uploadDir);
             if (Files.notExists(uploadPath)) {
                 Files.createDirectories(uploadPath);
             }
 
             // Lưu file vào thư mục upload
-            Path filePath = uploadPath.resolve(fileName);
+            Path filePath = uploadPath.resolve(uniqueName);
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
-            // Chuẩn bị URL để lưu vào DB (ở đây đặt path relative)
-            String fileUrl = "/files/" + fileName;
+            // URL để lưu vào DB
+            String fileUrl = "/files/" + uniqueName;
 
             // Lưu vào DB
             FileInfo fileInfo = new FileInfo();
-            fileInfo.setName(fileName);
+            fileInfo.setName(uniqueName);
             fileInfo.setUrl(fileUrl);
             fileInfoMapper.insertFileInfo(fileInfo);
 
@@ -65,6 +81,7 @@ public class FileUploadController {
                     .body("Có lỗi trong quá trình upload file.");
         }
     }
+
 
     @GetMapping("/files/download/{filename:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String filename) {

@@ -1,5 +1,6 @@
 package com.example.demo.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -7,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+    @Value("${app.file.upload-dir}")
+    private String uploadDir;
     @Override
     public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**")
@@ -20,6 +23,7 @@ public class WebConfig implements WebMvcConfigurer {
      * cấu hình cho phép xem file trên trình duyệt,mobile, frontend SPA...
      * @param registry
      */
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry){
         /**
@@ -28,6 +32,8 @@ public class WebConfig implements WebMvcConfigurer {
          * 🌐 Ví dụ:
          * Request GET /files/1678901234_myfile.png → Spring tìm /path/to/uploads/1678901234_myfile.png rồi trả file đó cho client.
          */
-        registry.addResourceHandler("/file/**").addResourceLocations("file:" + "/path/to/uploads/");
+        registry.addResourceHandler("/files/**")
+//                .addResourceLocations("file:" + uploadDir + "/"); - Apply for server
+        .addResourceLocations("file:///" + uploadDir + "/"); // -> Apply for windows
     }
 }

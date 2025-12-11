@@ -26,6 +26,7 @@ servlet:
 
 app:
   file:
-    upload-dir: C:/data/uploads
+#    upload-dir: /var/www/uploads - server
+    upload-dir: C:/data/uploads #windows
 
 
